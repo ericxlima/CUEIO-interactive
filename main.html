@@ -4,75 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style/style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>CUEIO-interactive</title>
-
-    <style>
-        html, body {
-          margin: 0;
-          padding: 0;
-          height: 100%;
-          width: 100%;
-          overflow: hidden;
-          background-color: black;
-        }
-  
-        video {
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
-          width: 100%;
-          height: 100%;
-        }
-        
-        #iniciar-button {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          padding: 20px 40px;
-          font-size: 2rem;
-          font-weight: bold;
-          color: white;
-          background-color: green;
-          border: none;
-          cursor: pointer;
-          z-index: 1;
-        }
-    </style>
-
 </head>
 <body>
     <div class="container">
-        <video id="meu-video" autoplay muted preload="auto" loop>
-            <source src="assets/main.mp4" type="video/mp4">
+        <video id="video1" autoplay muted preload="auto" loop>
+          <source src="assets/main.mp4" type="video/mp4">
         </video>
-        <button id="iniciar-button">Iniciar</button>
-    </div>
-    <script>
-        var video = document.getElementById('meu-video');
-        var iniciarButton = document.getElementById('iniciar-button');
-        
-        iniciarButton.addEventListener('click', function() {
-          video.muted = false;
-          video.play();
-          iniciarButton.style.display = 'none';
-        });
+        <video id="video2" preload="auto" style="display:none;">
+          <source src="assets/oi.mp4" type="video/mp4">
+        </video>
+        <video id="video3" preload="auto" style="display:none;">
+          <source src="assets/vc_quer_cenoura.mp4" type="video/mp4">
+        </video>
+        <video id="video4" preload="auto" style="display:none;">
+          <source src="assets/game_over_cenoura.mp4" type="video/mp4">
+        </video>
 
-        // Quando o usuário clica no botão de tela cheia
-        video.addEventListener('click', function() {
-        if (video.requestFullscreen) {
-            video.requestFullscreen();
-        } else if (video.msRequestFullscreen) {
-            video.msRequestFullscreen();
-        } else if (video.mozRequestFullScreen) {
-            video.mozRequestFullScreen();
-        } else if (video.webkitRequestFullscreen) {
-            video.webkitRequestFullscreen();
-        }
-        });
-    </script>
+        <button id="btn-iniciar">Iniciar</button>
+        <button id="btn-oi" style="display:none; left: 16rem; top:12rem">Oi</button>
+        <button id="btn-cenoura" style="display:none; left: 16rem; top:18rem">Quer cenoura?</button>
+        <button id="btn-insistir" style="display:none; left: 16rem; top:12rem">Insistir</button>
+        <button id="btn-voltar" style="display:none; left: 16rem; top:18rem">voltar</button>
+    </div>
+    <p class="game-over" id="game-over">Game Over</p>
+    <script src="script.js"></script>
 </body>
 </html>
