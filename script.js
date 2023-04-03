@@ -15,16 +15,20 @@ window.onload = function() {
 
     function game_over() {
         textGameOver.style.display = "block";
+        btnVoltar.style.display = 'block';
     }
 
     function reset() {
-        video1.muted = false;
-        video1.play();
         btnIniciar.style.display = 'none';
         btnOi.style.display = 'block';
         btnCenoura.style.display = 'block';
         btnVoltar.style.display = 'none';
         btnInsistir.style.display = 'none';
+        video4.style.display = 'none';
+        textGameOver.style.display = "none";
+        video1.style.display = 'block';
+        video1.muted = false;
+        video1.play();
     }
 
     btnIniciar.addEventListener('click', function() {
