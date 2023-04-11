@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styleFilm2.css" />
+    <title>CUEIO-interactive</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Importante para dar play no vídeo -->
+        <video id="video1" autoplay muted preload="auto" loop>  
+            <source src="assets/main.mp4" type="video/mp4">
+          </video>
+        <video id="video5" preload="auto" style="display:none;">
+            <!-- Observe que aqui eu faço um split no vídeo -->
+            <source src="assets/movie2.mp4#t=6,32" type="video/mp4">
+        </video>
+        
+        
+        
+        <button id="btn-iniciar">Iniciar</button>
+        
+        <div id="container-input-text" style="display:none;">
+            <input type="text" id="input-text" placeholder="Qual o nome da Banda??">
+            <button id="btn-enviar">Enviar</button>
+        </div>
+
+        <p id="resposta" style="display:none;"></p>
+
+    </div>
+    <script src="scriptFilm2.js"></script>
+</body>
+</html>
